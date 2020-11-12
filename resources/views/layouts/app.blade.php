@@ -11,8 +11,12 @@
     <title>Olá, mundo!</title>
   </head>
   <body>
+    <dir class="conteiner">
+      
+      @yield('conteudo')  
+    </dir>
    
-    @yield('conteudo')
+    
 
 
 
