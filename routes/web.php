@@ -10,4 +10,4 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Routes::get('usuarios_login','usuarios_login@ApresentarFormularioLogin')
+Routes::get('usuarios_login','usuariosController@ApresentarFormularioLogin');
