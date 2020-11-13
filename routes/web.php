@@ -1,6 +1,5 @@
 <?php
-use Illuminate\Support\Facades\Route;
-use Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,5 +10,4 @@ use Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Routes::get('usuarios_login','usuariosController@ApresentarFormularioLogin');
+Routes::get('usuarios_login','usuarios_login@ApresentarFormularioLogin')

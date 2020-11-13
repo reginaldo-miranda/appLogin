@@ -11,12 +11,8 @@
     <title>usuarios</title>
   </head>
   <body>
-    <dir class="conteiner">
-      
-      @yield('conteudo')  
-    </dir>
    
-    
+    @yield('conteudo')
 
 
 
