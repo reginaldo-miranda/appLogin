@@ -6,10 +6,8 @@ use Illuminate\Http\Request;
 
 class usuariosController extends Controller
 {
-    
-    public function ApresentarFormularioLogin(){
+    public function ApresntarFormulariosLogin(){
     	// apresentar o formulario de login
     	return view('usuarios_login');
-
     }
 }
