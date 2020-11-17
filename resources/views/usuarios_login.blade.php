@@ -2,9 +2,6 @@
 
 @section('conteudo')
 
-	<div class="row text-center">
-      <img src="{{asset('imagens/lock.png')}}">
-		
-	</div>
+	<h1>Teste</h1>
 
 @endsection

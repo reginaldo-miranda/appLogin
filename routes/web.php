@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,8 +13,8 @@
 |
 */
 
-//Route::get('/', function () {
- //   return view('welcome');
+// Route::get('/', function () {
+//    return view('welcome');
 //});
 
 Route::get('usuarios_login','usuariosController@ApresntarFormulariosLogin');
