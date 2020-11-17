@@ -11,11 +11,18 @@
 
     <div class='row'>
     	<dir class="col-md-4 offset-4">
+    		{{-- erros (validacao) --}}
 
-    		<form>
+    		{{ count($errors) }}	
+
+
+    		<form method="post" action="/usuarios_fazer_login">
+
+    		 {{ csrf_field()}} 
+
 			  <div class="form-group">
 			    <label for="id_usuarios">Email</label>
-			    <input type="email" class="form-control" id="id_usuarios" name="text_usuario" placeholder="Usuario:">
+			    <input type="text" class="form-control" id="id_usuarios" name="text_usuario" placeholder="Usuario:">
 			  </div>
 			  <div class="form-group">
 			    <label for="id_senha">Senha</label>
