@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use App\usuarios;
 
 class usuariosController extends Controller
 {
@@ -12,16 +14,27 @@ class usuariosController extends Controller
     }
 
     public function FazerLogin(Request $request){
-    	//	verificaçao dos inputs
-        $this->validate($request,[
-        	'text_usuario' =>'bail|required|min:6',
-        	'text_senha' =>'required|min:6'
-
-        ]);
-
-    	//depois da verificacao consultar bd
-
-    	return 'Validado';
+    	
+        $senha = Hash::make($request->text_senha);
+        return($request->text_senha. ' - ' . $senha);
+    
 
     }
+
+    public function InserirUsuario(){
+     
+     // inseir um usuario na bd
+        $novo = new usuarios;
+        $novo->usuario = 'Ana';
+        $novo->senha = Hash::make('adivinhaesta');
+        $novo->email = 'teste@testeana.com';
+        $novo->save();
+        return ('usuario inserido');
+    }
 }
+/*
+ joao abc123
+ carlos minhapass
+ ana advinhaesta
+
+*/

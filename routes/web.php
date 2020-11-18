@@ -19,3 +19,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('usuarios_login','usuariosController@ApresntarFormulariosLogin');
 Route::post('usuarios_fazer_login', 'usuariosController@FazerLogin');
+
+//temporario
+Route::get('inserir_usuario','usuariosController@InserirUsuario');
