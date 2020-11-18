@@ -13,7 +13,7 @@
     	<dir class="col-md-4 offset-4">
     		{{-- erros (validacao) --}}
 
-    		{{ count($errors) }}	
+    		@include('inc.erros')	
 
 
     		<form method="post" action="/usuarios_fazer_login">

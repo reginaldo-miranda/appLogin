@@ -14,8 +14,8 @@ class usuariosController extends Controller
     public function FazerLogin(Request $request){
     	//	verificaçao dos inputs
         $this->validate($request,[
-        	'text_usuario' =>'required',
-        	'text_senha' =>'required'
+        	'text_usuario' =>'bail|required|min:6',
+        	'text_senha' =>'required|min:6'
 
         ]);
 
