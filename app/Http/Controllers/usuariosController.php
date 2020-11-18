@@ -18,24 +18,29 @@ class usuariosController extends Controller
 
         // vai buscar  a conta do usuario
         $dados = usuarios::where('usuario', $request->text_usuario)->first();
+      
+       // return(dd($dados));
 
         $resultado = "";
-
-        if(count($dados)==0){
-            $resultado = "nao existe esta cona de usuario";
+           if (isset($this->$dados) && count($this->$dados) == 0){
             
-        }else{
+    
+            
+            //if(count($dados) == 0){
+                $resultado = "nao existe esta conta de usuario";
+            }else{
+                printf("cuzao eu passei aqui!");   
 
             // foi encontrado o usuario
-            if(Hash::check($request->text_senha, $dados->senha)){
-                $resultado = "Logim com sucesso";
-
-            }else{
-                $resultado = "Login sem sucesso. (senha esta errada)";
+                if(Hash::check($request->text_senha, $dados->senha)){
+                    $resultado = "Logim com sucesso";
+                }else{
+                    $resultado = "Login sem sucesso. (senha esta errada)";
+                }
             }
-        }
     
-        return($resultado);
+            return($resultado);
+     
     }
 
     public function InserirUsuario(){
