@@ -14,20 +14,37 @@ class usuariosController extends Controller
     }
 
     public function FazerLogin(Request $request){
-    	
-        $senha = Hash::make($request->text_senha);
-        return($request->text_senha. ' - ' . $senha);
-    
+    	// verifica se os dados de login estao corretos
 
+        // vai buscar  a conta do usuario
+        $dados = usuarios::where('usuario', $request->text_usuario)->first();
+
+        $resultado = "";
+
+        if(count($dados)==0){
+            $resultado = "nao existe esta cona de usuario";
+            
+        }else{
+
+            // foi encontrado o usuario
+            if(Hash::check($request->text_senha, $dados->senha)){
+                $resultado = "Logim com sucesso";
+
+            }else{
+                $resultado = "Login sem sucesso. (senha esta errada)";
+            }
+        }
+    
+        return($resultado);
     }
 
     public function InserirUsuario(){
      
      // inseir um usuario na bd
         $novo = new usuarios;
-        $novo->usuario = 'Ana';
-        $novo->senha = Hash::make('adivinhaesta');
-        $novo->email = 'teste@testeana.com';
+        $novo->usuario = 'Regi';
+        $novo->senha = Hash::make('9876547');
+        $novo->email = 'teste@testeregi.com';
         $novo->save();
         return ('usuario inserido');
     }
@@ -36,5 +53,6 @@ class usuariosController extends Controller
  joao abc123
  carlos minhapass
  ana advinhaesta
+ Regi 9876547
 
 */

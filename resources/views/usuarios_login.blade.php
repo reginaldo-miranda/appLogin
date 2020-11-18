@@ -30,8 +30,9 @@
 			  </div>
 			  <button type="submit" class="btn btn-primary">login</button>
 			</form>
-    		
+    		   <a href="/inserir_usuario">Criar nova conta..</a>
     	</dir>
+
     	
     </div>
 
