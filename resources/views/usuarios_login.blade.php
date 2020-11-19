@@ -10,7 +10,7 @@
 	</div>
 
     <div class='row'>
-    	<dir class="col-md-4 offset-4">
+    	<div class="col-md-4 offset-4">
     		{{-- erros (validacao) --}}
 
     		@include('inc.erros')	
@@ -31,7 +31,7 @@
 			  <button type="submit" class="btn btn-primary">login</button>
 			</form>
     		   <a href="/inserir_usuario">Criar nova conta..</a>
-    	</dir>
+    	</div>
 
     	
     </div>
