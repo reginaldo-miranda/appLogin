@@ -24,14 +24,11 @@ class usuariosController extends Controller
         $resultado = "";
            if (isset($this->$dados) && count($this->$dados) == 0){
             
-    
-            
             //if(count($dados) == 0){
                 $resultado = "nao existe esta conta de usuario";
             }else{
-                printf("cuzao eu passei aqui!");   
-
-            // foi encontrado o usuario
+                // printf("cuzao eu passei aqui!");   
+                // foi encontrado o usuario
                 if(Hash::check($request->text_senha, $dados->senha)){
                     $resultado = "Logim com sucesso";
                 }else{
